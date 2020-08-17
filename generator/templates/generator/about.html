@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container text-center">
+    The Password Generator was built using Python and Django.<br>
+    It basically uses the random library in python to generate a password from
+    characters in the ranges of a-z, A-Z, 0...9 and special characters (if these are selected in the options at least).<br><br
+    It is very simple but a nice demo of how quickly you can get something useful functionaing with Python and Django!<br><br>
+    Hope you will find this useful.
+    <br><br>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+</div>
+</body>
+</html>
