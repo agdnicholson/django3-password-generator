@@ -2,18 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Password Generator: About</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        #message {
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #inner-message {
+            margin: 10px;
+        }
+    </style>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYT8AIcJ9AG/CfQCpwn0A08J9AN3CfQDEwn0AbWE/AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwn0ATMJ9ANPCfQD/wn0A/8J9AP/CfQD/wn0A/8J9AP/CfQD8wn0AawAAAAAAAAAAAAAAAAAAAAAAAAAAwn0AgcJ9APrCfQD/wn0A/8J9AP/CfQD/wn0A/8J9AP/CfQD/wn0A/8J9AP/CfQCqAAAAAAAAAAAAAAAAwn0ARsJ9APnCfQD/wnwA/9anU//dtnD/3bZw/922cP/dtnD/2a5g/8J8AP/CfQD/wn0A/8J9AHEAAAAAYT4AAsSBB/XFgwv/xYMM/86VMP////////////369v/79u3////////////QnD7/wn0A/8J9AP/CfQD9YT8AC8iKGk3Iihr/yIoa/8iKGv/RnkH////////////t2LP/58uZ////////////0qBF/8J9AP/CfQD/wn0A/8J9AHjIihqbyIoa/8iKGv/Iihr/0Z5B////////////2a1f/9KfQ////////////9KgRf/CfQD/wn0A/8J9AP/CfQDPyIoawciKGv/Iihr/yIoa/9GcPv////////////ft3f/z5cz////////////Sn0T/wn0A/8J9AP/CfQD/wn0A5siKGsjIihr/yIoa/8iKGv/IiRn/4sKG//369P/kxIz/48OK//37+P/ozp//x4cT/8J9Af/CfQD/wn0A/8J9AN7IihqkyIoa/8iKGv/Iihr/yIoa/8yTLP/16tX/yIsb/8iJGP/y4sb/0Js8/8iKGv/IiBb/wn0A/8J9AP/CfQC0yIoaRMiKGv/Iihr/yIoa/8iKGv/KjiL/+vXr/8iKGv/HiBb/+fHj/82ULv/Iihr/yIoa/8SBCP/CfQD/wn0AdgAAAADIihrwyIoa/8iKGv/Iihr/yIoa/+TFjf/58uX/9uvX/+vVrP/Iihn/yIoa/8iKGv/IiRf/wn0A22E/ACoAAAAAyIoaNciKGv/Iihr/yIoa/8iKGv/Iihr/zpYy/8+YNv/Iihn/yIoa/8iKGv/Iihr/yIoa/MSCClwAAAAAAAAAAAAAAADIihpmyIoa/8iKGv/Iihr/yIoa/8iKGv/Iihr/yIoa/8iKGv/Iihr/yIoa+8iKGoUAAAAAAAAAAAAAAAAAAAAAAAAAAMiKGjPIihrwyIoa/8iKGv/Iihr/yIoa/8iKGv/Iihr/yIoa0MiKGk4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZEUNAciKGkPIihqjyIoayMiKGsLIihqdyIoaUWRFDQMAAAAAAAAAAAAAAAAAAAAA/D8AAPAPAADAAwAAwAMAAIABAACAAQAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAOADAADwDwAA/D8AAA==" rel="icon" type="image/x-icon" />
 </head>
 <body>
+<div id="message">
+    <div id="inner-message" class="alert alert-info text-center">
+        This is a test project made by Andrew Nicholson. Click <a href="https://www.andrewnicholson.co.uk" class="text-info">HERE</a> to go back to the main site: <a href="https://www.andrewnicholson.co.uk" class="text-info">andrewnicholson.co.uk</a>
+    </div>
+</div>
 <div class="container text-center">
-    The Password Generator was built using Python and Django.<br>
-    It basically uses the random library in python to generate a password from
-    characters in the ranges of a-z, A-Z, 0...9 and special characters (if these are selected in the options at least).<br><br
-    It is very simple but a nice demo of how quickly you can get something useful functionaing with Python and Django!<br><br>
-    Hope you will find this useful.
-    <br><br>
-    <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+    <h1 class="text-center">About The Password Generator</h1>
+    <div class="col-md-6 offset-md-3">
+        The Password Generator was built using Python and Django.<br>
+        It basically uses the random library in python to generate a password from
+        characters in the ranges of a-z, A-Z, 0...9 and special characters (if these are selected in the options at least).<br><br
+        It is very simple but a nice demo of how quickly you can get something useful functionaing with Python and Django!<br><br>
+        Hope you will find this useful.
+        <br><br>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+    </div>
 </div>
 </body>
 </html>

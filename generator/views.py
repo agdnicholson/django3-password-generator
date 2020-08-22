@@ -12,13 +12,13 @@ def about(request):
 
 def password(request):
     characters = list('abcdefghijklmnopqrstuvwxyz')
-    if request.GET.get('uppercase'):
+    if request.POST.get('uppercase'):
         characters.extend('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
-    if request.GET.get('special'):
+    if request.POST.get('special'):
         characters.extend('!@£$%^&*()/?.>,<][}{|')
-    if request.GET.get('numbers'):
+    if request.POST.get('numbers'):
         characters.extend('0123456789')
-    length = int(request.GET.get('length', 12))
+    length = int(request.POST.get('length', 12))
     password = ''
     for x in range(length):
         password += random.choice(characters)

@@ -2,36 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Password Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        #message {
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #inner-message {
+            margin: 10px;
+        }
+
+        .form-check-input {
+            margin-left:0;
+        }
+
+        .form-check-label {
+            margin-left: 1.25em;
+        }
+    </style>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYT8AIcJ9AG/CfQCpwn0A08J9AN3CfQDEwn0AbWE/AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwn0ATMJ9ANPCfQD/wn0A/8J9AP/CfQD/wn0A/8J9AP/CfQD8wn0AawAAAAAAAAAAAAAAAAAAAAAAAAAAwn0AgcJ9APrCfQD/wn0A/8J9AP/CfQD/wn0A/8J9AP/CfQD/wn0A/8J9AP/CfQCqAAAAAAAAAAAAAAAAwn0ARsJ9APnCfQD/wnwA/9anU//dtnD/3bZw/922cP/dtnD/2a5g/8J8AP/CfQD/wn0A/8J9AHEAAAAAYT4AAsSBB/XFgwv/xYMM/86VMP////////////369v/79u3////////////QnD7/wn0A/8J9AP/CfQD9YT8AC8iKGk3Iihr/yIoa/8iKGv/RnkH////////////t2LP/58uZ////////////0qBF/8J9AP/CfQD/wn0A/8J9AHjIihqbyIoa/8iKGv/Iihr/0Z5B////////////2a1f/9KfQ////////////9KgRf/CfQD/wn0A/8J9AP/CfQDPyIoawciKGv/Iihr/yIoa/9GcPv////////////ft3f/z5cz////////////Sn0T/wn0A/8J9AP/CfQD/wn0A5siKGsjIihr/yIoa/8iKGv/IiRn/4sKG//369P/kxIz/48OK//37+P/ozp//x4cT/8J9Af/CfQD/wn0A/8J9AN7IihqkyIoa/8iKGv/Iihr/yIoa/8yTLP/16tX/yIsb/8iJGP/y4sb/0Js8/8iKGv/IiBb/wn0A/8J9AP/CfQC0yIoaRMiKGv/Iihr/yIoa/8iKGv/KjiL/+vXr/8iKGv/HiBb/+fHj/82ULv/Iihr/yIoa/8SBCP/CfQD/wn0AdgAAAADIihrwyIoa/8iKGv/Iihr/yIoa/+TFjf/58uX/9uvX/+vVrP/Iihn/yIoa/8iKGv/IiRf/wn0A22E/ACoAAAAAyIoaNciKGv/Iihr/yIoa/8iKGv/Iihr/zpYy/8+YNv/Iihn/yIoa/8iKGv/Iihr/yIoa/MSCClwAAAAAAAAAAAAAAADIihpmyIoa/8iKGv/Iihr/yIoa/8iKGv/Iihr/yIoa/8iKGv/Iihr/yIoa+8iKGoUAAAAAAAAAAAAAAAAAAAAAAAAAAMiKGjPIihrwyIoa/8iKGv/Iihr/yIoa/8iKGv/Iihr/yIoa0MiKGk4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZEUNAciKGkPIihqjyIoayMiKGsLIihqdyIoaUWRFDQMAAAAAAAAAAAAAAAAAAAAA/D8AAPAPAADAAwAAwAMAAIABAACAAQAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAOADAADwDwAA/D8AAA==" rel="icon" type="image/x-icon" />
 </head>
 <body>
-<div class="container text-center">
-    <h1>Password Generator</h1>
-    <form action="{% url 'password' %}" method="get">
-        <select name="length">
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12" selected="selected">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
-        </select> Length
+<div id="message">
+    <div id="inner-message" class="alert alert-info text-center">
+        This is a test project made by Andrew Nicholson. Click <a href="https://www.andrewnicholson.co.uk" class="text-info">HERE</a> to go back to the main site: <a href="https://www.andrewnicholson.co.uk" class="text-info">andrewnicholson.co.uk</a>
+    </div>
+</div>
+<div class="container">
+    <h1 class="text-center">Password Generator</h1>
+    <div class="col-md-6 offset-md-3 text-left">
+        <form action="{% url 'password' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="length">Length</label>
+                <select name="length" class="form-control">
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12" selected="selected">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="uppercase" id="uppercase" class="form-check-input">
+                <label class="form-check-label" for="uppercase">Uppercase</label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="numbers" id="numbers" class="form-check-input">
+                <label class="form-check-label" for="numbers">Numbers</label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="special" id="special" class="form-check-input">
+                <label class="form-check-label" for="special">Special Characters</label>
+            </div>
+            <input type="submit" value="Generate Password" class="btn btn-primary" />
+        </form>
         <br>
-        <input type="checkbox" name="uppercase"> Uppercase
-        <br>
-        <input type="checkbox" name="numbers"> Numbers
-        <br>
-        <input type="checkbox" name="special"> Special Characters
-        <br>
-        <input type="submit" value="Generate Password" class="btn btn-primary" />
-    </form>
-    <a href="{% url 'about' %}">About the password generator</a>
+        <a href="{% url 'about' %}">About the password generator</a>
+    </div>
+
 </div>
 </body>
 </html>
